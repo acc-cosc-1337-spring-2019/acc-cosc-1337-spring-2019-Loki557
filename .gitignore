@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+/.vs/acc-cosc-1337-spring-2019-Loki557/v15/ipch/AutoPCH
+/.vs/acc-cosc-1337-spring-2019-Loki557/v15
+/.vs/ProjectSettings.json
+/.vs
