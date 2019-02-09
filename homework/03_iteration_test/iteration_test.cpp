@@ -28,8 +28,8 @@ CGCTATAG	GATATCGC
 */
 TEST_CASE("Test the get_reverse_string function")
 {
-	REQUIRE(get_gc_content("AGCTATAG") == "GATATCGA");
-	REQUIRE(get_gc_content("CGCTATAG") == "GATATCGC");
+	REQUIRE(get_reverse_string("AGCTATAG") == "GATATCGA");
+	REQUIRE(get_reverse_string("CGCTATAG") == "GATATCGC");
 }
 
 
@@ -42,6 +42,6 @@ CCCGGAAAAT	ATTTTCCGGG
 */
 TEST_CASE("Test the get_dna_complement function")
 {
-	REQUIRE(get_gc_content("AAAACCCGGT") == "ACCGGGTTTT");
-	REQUIRE(get_gc_content("CCCGGAAAAT") == "ATTTTCCGGG");
+	REQUIRE(get_dna_complement("AAAACCCGGT") == "ACCGGGTTTT");
+	REQUIRE(get_dna_complement("CCCGGAAAAT") == "ATTTTCCGGG");
 }
