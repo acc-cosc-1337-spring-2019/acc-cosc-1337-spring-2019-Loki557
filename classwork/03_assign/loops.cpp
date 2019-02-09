@@ -17,7 +17,7 @@ int factorials(int num)
 	int solution = 1;
 	for (int i = 1; i <= num; ++i)
 	{
-		solution *= num;
+		solution *= i;
 	}
 	return solution;
 }

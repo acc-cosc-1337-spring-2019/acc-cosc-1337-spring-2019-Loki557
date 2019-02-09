@@ -17,7 +17,8 @@ int main()
 		cout << "Enter a number: ";
 		cin >> num;
 
-		int factorials(num);
+		int solution = factorials(num);
+		cout << "\nThe factorial is: " << solution;
 
 		cout << "\n" << "Do you wish to enter another number(y/n): ";
 		cin >> choice;
