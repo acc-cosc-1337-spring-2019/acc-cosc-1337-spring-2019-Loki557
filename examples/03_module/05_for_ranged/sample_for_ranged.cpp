@@ -1,9 +1,10 @@
 #include <string>
+#include <iostream>
 #include "sample_for_ranged.h"
 
 void loop_string_w_index(std::string str)
 {
-	for (int 1 = 0; i < str.length(); ++i)
+	for (int i = 0; i < str.length(); ++i)
 	{
 		std::cout << str[i] << "\n";
 	}
