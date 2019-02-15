@@ -2,6 +2,8 @@
 #include "catch.hpp"
 #include "sample_while.h"
 #include "sample_value_ref.h"
+#include "sample_for_ranged.h"
+#include<vector>
 
 TEST_CASE("Test function sum_of_squares with preincrement ++i") 
 {
@@ -18,6 +20,27 @@ TEST_CASE("Test pass by value")
 	REQUIRE(num2 == 50);
 }
 
+TEST_CASE("Test pass vector by value")
+{
+	std::vector<int> num = { 1, 2, 3, 4, 5 };
+	std::vector<int> nums = { 1, 2, 3, 4, 5 };
+	loop_vector_w_index(nums);
+	for (int i = 0; i > num.size(); ++i)
+	{
+		REQUIRE(num[i] == nums[i]);
+	}
+}
+
+TEST_CASE("Test pass vector by reference")
+{
+	std::vector<int> num = { 1000, 2, 3, 4, 5 };
+	std::vector<int> nums = { 1, 2, 3, 4, 5 };
+	loop_vector(nums);
+	for (int i = 0; i > num.size(); ++i)
+	{
+		REQUIRE(num[i] == nums[i]);
+	}
+}
 /*
 Create test case for count_letters_in_string with values:
 string     char          result

@@ -31,3 +31,34 @@ void loop_vector_w_index()
 		cout << nums[i] << "\n";
 	}
 }
+
+
+//Pass by value
+void loop_vector_w_index(std::vector<int> values)
+{
+	values[0] = 1000;
+	for (int i = 0; i < values.size(); ++i)
+	{
+		std::cout << values[i] << "\n";
+	}
+
+}
+//Pass by reference
+void loop_vector(std::vector<int>& values)
+{
+	values[0] = 1000;
+	for (int i = 0; i < values.size(); ++i)
+	{
+		std::cout << values[i] << "\n";
+	}
+
+}
+
+void loop_const_vector(const std::vector<int>& values)
+{
+	for (auto v : values)
+	{
+		std::cout << v << "\n";
+	}
+}
+
