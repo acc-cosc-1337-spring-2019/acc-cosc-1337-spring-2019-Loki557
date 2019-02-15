@@ -12,7 +12,7 @@ using std::string;
 //returns 'Option 3' when value 3
 //returns 'Option 4' when value 4
 //return 'Invalid Option' otherwise
-string menu_option(int choice);
+string menu_option(int choice)
 {
 	switch (choice)
 	{
