@@ -3,6 +3,7 @@
 #include "sample_while.h"
 #include "sample_value_ref.h"
 #include "sample_for_ranged.h"
+#include "sample_value_ref.h"
 #include<vector>
 
 TEST_CASE("Test function sum_of_squares with preincrement ++i") 
