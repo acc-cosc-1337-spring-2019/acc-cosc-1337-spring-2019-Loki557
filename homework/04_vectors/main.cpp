@@ -27,7 +27,7 @@ int main()
 			vector<int> vec;
 			do
 			{
-				cout << "\n Enter a number to add to a vector: ";
+				cout << "\nEnter a number to add to a vector: ";
 				cin >> entry1;
 				vec.push_back(entry1);
 				cout << "\n\"" << entry1 << "\" added to the vector.  Do you wish to add another entry, \"1\" for yes, \"2\" for no: ";
