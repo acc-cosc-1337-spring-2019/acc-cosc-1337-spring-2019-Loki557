@@ -15,9 +15,10 @@ bool TicTacToe::game_over()
 {
 	if (check_column_win() || check_diagonal_win() || check_row_win())
 	{
-		//set_next_player();
-		cout << "\nPlayer " << next_player << " is the winner";
+		
+		cout << "\n Winner";
 		return true;
+		
 	}
 	else if (check_board_full())
 	{
@@ -95,7 +96,7 @@ bool TicTacToe::check_row_win()
 		return true;
 	else if (pegs[3] == "O" && pegs[4] == "O" && pegs[5] == "O")
 		return true;
-	else if (pegs[3] == "X" && pegs[6] == "X" && pegs[9] == "X")
+	else if (pegs[6] == "X" && pegs[7] == "X" && pegs[8] == "X")
 		return true;
 	else if (pegs[6] == "O" && pegs[7] == "O" && pegs[8] == "O")
 		return true;
@@ -119,15 +120,15 @@ bool TicTacToe::check_diagonal_win()
 
 void TicTacToe::clear_board()
 {
-	for (auto p : pegs)
-		p = "";
+	for (auto& p : pegs)
+		p = " ";
 }
 
 bool TicTacToe::check_board_full()
 {
-	for (auto p : pegs)
+	for (int p = 0; p < 9; ++p)
 	{
-		if (p == " ")
+		if (pegs[p] == " ")
 			return false;
 	}
 	
