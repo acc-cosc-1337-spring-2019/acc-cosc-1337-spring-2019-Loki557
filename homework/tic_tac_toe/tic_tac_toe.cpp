@@ -17,12 +17,15 @@ bool TicTacToe::game_over()
 	{
 		
 		cout << "\n Winner";
+		set_winner();
 		return true;
+		
 		
 	}
 	else if (check_board_full())
 	{
 		cout << "\nTie Game!";
+		set_winner();
 		return true;
 	}
 	else
@@ -36,8 +39,9 @@ void TicTacToe::start_game(std::string first_player)
 void TicTacToe::mark_board(int position)
 {
 	pegs[position - 1] = next_player;
-	game_over();
-	set_next_player();
+	bool end_game = game_over();
+	if (end_game == false)
+		set_next_player();
 }
 
 void TicTacToe::display_board() const
@@ -133,4 +137,17 @@ bool TicTacToe::check_board_full()
 	}
 	
 	return true;
+}
+
+void TicTacToe::set_winner()
+{
+	if (check_board_full())
+		winner = "C";
+	else
+		winner = next_player;
+}
+
+string TicTacToe::get_winner()
+{
+	return winner;
 }
