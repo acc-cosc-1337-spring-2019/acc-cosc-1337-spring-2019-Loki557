@@ -15,9 +15,13 @@ void TicTacToeManager::save_game(TicTacToe b)
 
 void TicTacToeManager::display_history() const
 {
+	int i = 1;
 	for (auto g : games)
 	{
+		cout << "\n Game " << i<<"\n";
 		g.display_board();
+		cout << "\n";
+		++i;
 	}
 	cout << "\n X Wins: " << x_win << "\n O Wins: " << o_win << "\n Ties: " << ties;
 }
