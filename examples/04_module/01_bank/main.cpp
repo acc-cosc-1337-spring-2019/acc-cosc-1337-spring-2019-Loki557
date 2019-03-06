@@ -4,6 +4,16 @@
 
 int main()
 {
+
+	/*
+	for(auto tic_tac_toe: list)
+	{
+		cout << tic_tac_toe<<"\n";
+
+	}
+	
+	
+	*/
 	BankAccount account(123, 100);
 	
 
@@ -17,7 +27,14 @@ int main()
 
 	ATM atm(account);
 	atm.display_balance();
-	std::cout << copy.get_balance();
+	display(account);
+	BankAccount account2(1, 900);
+	BankAccount account3 = account + account2;
+	display(account3);
+	std::cout << "\n";
+	std::cout << account3 << "\n";
+
+	//std::cout << copy.get_balance();
 
 	/*std::vector<BankAccount>accounts;
 	BankAccount account(12345689, 500);  //object1

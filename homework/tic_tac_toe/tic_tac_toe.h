@@ -1,9 +1,10 @@
-#include<string>
-#include<vector>
 //#include "tic_tac_toe_manager.h"
 
 #ifndef TICTACTOE_H
 #define TICTACTOE_H
+#include<string>
+#include<vector>
+
 
 using std::vector;
 using std::string;

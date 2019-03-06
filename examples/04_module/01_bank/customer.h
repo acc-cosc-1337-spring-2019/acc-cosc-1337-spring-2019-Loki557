@@ -1,6 +1,8 @@
+#include "bank_account.h"
+
 #ifndef CUSTOMER_H
 #define CUSTOMER_H
-#include "bank_account.h"
+
 
 class Customer
 {
