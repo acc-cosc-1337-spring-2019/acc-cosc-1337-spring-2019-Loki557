@@ -5,12 +5,12 @@
 //Write class function implementations here
 using std::cout;
 using std::string;
-void TicTacToeManager::save_game(TicTacToe b)
+void TicTacToeManager::save_game(const TicTacToe b)
 {
 	games.push_back(b);
-	string winner = b.get_winner();
+	TicTacToe copy = b;
+	string winner = copy.get_winner();
 	update_winner_count(winner);
-	
 }
 
 void TicTacToeManager::display_history() const
@@ -22,6 +22,7 @@ void TicTacToeManager::display_history() const
 		g.display_board();
 		cout << "\n";
 		++i;
+		
 	}
 	cout << "\n X Wins: " << x_win << "\n O Wins: " << o_win << "\n Ties: " << ties;
 }
