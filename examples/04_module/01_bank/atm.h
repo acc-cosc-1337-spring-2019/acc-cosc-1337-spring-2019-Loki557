@@ -7,11 +7,13 @@ class ATM
 {
 public:
 	//ATM() : customer(1, 5) {} // How to initialize an instance
-	ATM(Customer c) : customer(c) {}
+	ATM(Customer & c) : customer(c) {}
 	void display_balance();
+	void deposit(double amt);
+	void withdraw(double amt);
 
 private:
-	Customer customer;
+	Customer& customer;
 };
 
 #endif // !ATM_H
