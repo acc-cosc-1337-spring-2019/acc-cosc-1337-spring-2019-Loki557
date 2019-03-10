@@ -1,23 +1,23 @@
 #include "atm.h"
-#include "customer.h"
-#include <iostream>
+#include<iostream>
 
 int main()
 {
-	BankAccount account(123, 100);
-	
-
-	//copies current data from one instance to another 
-	BankAccount copy = account;
-
-	//Will not effect "copy" instance of BankAccount since it is still a different instance
-	account.deposit(50);
-
+	BankAccount account(123456, 500);
 	Customer customer(account);
+	ATM atm(customer);
 
-	ATM atm(account);
 	atm.display_balance();
-	std::cout << copy.get_balance();
+	atm.deposit(50);
+	atm.display_balance();
+
+
+	BankAccount b(1, 900);
+	BankAccount c = account + b;
+	//std::cout << c;
+	//std::cin << c;
+	std::cout << "\n";
+	std::cout << c << "\n";
 
 	/*std::vector<BankAccount>accounts;
 	BankAccount account(12345689, 500);  //object1
@@ -28,6 +28,15 @@ int main()
 	{
 		std::cout << act.get_balance() << "\n";
 	}*/
+
+	/*
+
+	for(auto tic_tac_toe: list)
+	{
+		cout<<tic_tac_toe<<"\n";
+	}
+
+	*/
 
 	return 0;
 }
