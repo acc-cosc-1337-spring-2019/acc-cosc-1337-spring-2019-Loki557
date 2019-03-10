@@ -12,7 +12,7 @@ using std::vector;
 int main() 
 {
 	string entry1, entry2 = "1";
-	int pos_entry;
+	
 	TicTacToeManager g;
 	do
 	{
@@ -23,10 +23,9 @@ int main()
 			
 		while (game.game_over() == false)
         {
-            game.display_board();
-            cout << "\n Player " << game.get_player() << " enter a postion to mark (1-9): ";
-            cin >> pos_entry;
-            game.mark_board(pos_entry);
+			cout << game;
+			cin >> game;
+			
 
         } 
 		//TicTacToeManager g;
@@ -39,8 +38,9 @@ int main()
 		cout << "\nEnter 1 to player another game, or any other key to quit ";
 		cin >> entry2;
 		if (entry2 != "1")
-			g.TicTacToeManager::display_history();
+			cout << g;
 
 	} while (entry2 == "1");
+	
 	return 0;
 }

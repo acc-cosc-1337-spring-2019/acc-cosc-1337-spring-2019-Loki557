@@ -9,7 +9,9 @@ class TicTacToeManager
 public:
 	//TicTacToeManager(TicTacToe g) : game(g) {}
 	void save_game(const TicTacToe b);
-	void display_history() const;
+	friend std::ostream & operator << (std::ostream & out,
+		const TicTacToeManager & t);
+	//void display_history() const;
 
 
 private:
