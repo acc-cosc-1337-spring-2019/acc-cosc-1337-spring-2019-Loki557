@@ -1,9 +1,10 @@
-#include<string>
-#include<vector>
 //#include "tic_tac_toe_manager.h"
 
 #ifndef TICTACTOE_H
 #define TICTACTOE_H
+#include<string>
+#include<vector>
+
 
 using std::vector;
 using std::string;
@@ -16,6 +17,7 @@ public:
 	void mark_board(int position);
 	void display_board() const;
 	string get_player() const;
+	string get_winner();
 	//bool winner;
 	
 	friend class TicTacToeManager;
@@ -31,7 +33,7 @@ private:
 	void clear_board();
 	bool check_board_full();
 	void set_winner();
-	string get_winner();
+	
 	
 };
 

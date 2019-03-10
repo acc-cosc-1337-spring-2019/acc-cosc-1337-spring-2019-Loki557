@@ -16,7 +16,7 @@ bool TicTacToe::game_over()
 	if (check_column_win() || check_diagonal_win() || check_row_win())
 	{
 		
-		cout << "\n Winner";
+		//cout << "\n Winner";
 		set_winner();
 		return true;
 		
@@ -24,7 +24,7 @@ bool TicTacToe::game_over()
 	}
 	else if (check_board_full())
 	{
-		cout << "\nTie Game!";
+		//cout << "\nTie Game!";
 		set_winner();
 		return true;
 	}

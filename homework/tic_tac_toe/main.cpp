@@ -13,7 +13,7 @@ int main()
 {
 	string entry1, entry2 = "1";
 	int pos_entry;
-	
+	TicTacToeManager g;
 	do
 	{
 		cout << "Enter \"X\" or \"O\" to determine who goes first: ";
@@ -29,7 +29,12 @@ int main()
             game.mark_board(pos_entry);
 
         } 
-		TicTacToeManager g;
+		//TicTacToeManager g;
+		string winner = game.get_winner();
+		if (winner == "C")
+			cout << "\nTie Game.";
+		else
+			cout << "\nThe Winner is " << winner;
 		g.TicTacToeManager::save_game(game);
 		cout << "\nEnter 1 to player another game, or any other key to quit ";
 		cin >> entry2;
