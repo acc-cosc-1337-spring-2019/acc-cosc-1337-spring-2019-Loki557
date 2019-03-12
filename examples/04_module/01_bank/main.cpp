@@ -14,18 +14,18 @@ int main()
 	
 	
 	*/
-	BankAccount account(123, 100);
 	
+	BankAccount account(123, 100);
 
 	//copies current data from one instance to another 
 	BankAccount copy = account;
 
 	//Will not effect "copy" instance of BankAccount since it is still a different instance
 	account.deposit(50);
-
+	
+	
 	Customer customer(account);
-
-	ATM atm(account);
+	ATM atm(customer);
 	atm.display_balance();
 	display(account);
 	BankAccount account2(1, 900);
