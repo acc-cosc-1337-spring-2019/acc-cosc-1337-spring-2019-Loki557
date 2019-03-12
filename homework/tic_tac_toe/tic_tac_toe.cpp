@@ -44,7 +44,7 @@ void TicTacToe::mark_board(int position)
 		set_next_player();
 }
 
-void TicTacToe::display_board() const
+/*void TicTacToe::display_board() const
 {
 	int p = 0;
 	for (int r = 1; r <= 3; ++r)
@@ -58,6 +58,7 @@ void TicTacToe::display_board() const
 		cout << "\n";
 	}
 }
+*/
 
 std::string TicTacToe::get_player() const
 {
@@ -150,4 +151,30 @@ void TicTacToe::set_winner()
 string TicTacToe::get_winner()
 {
 	return winner;
+}
+
+std::ostream & operator<<(std::ostream & out, const TicTacToe & t)
+{
+	int p = 0;
+	for (int r = 1; r <= 3; ++r)
+	{
+		cout << "|";
+		for (int c = 1; c <= 3; ++c)
+		{
+			cout << t.pegs[p] << "|";
+			++p;
+		}
+		cout << "\n";
+	}
+	return out;
+}
+
+std::istream & operator>>(std::istream & in, const TicTacToe & t)
+{
+	
+	int pos_entry;
+	cout << "\n Player " << t.get_player() << " enter a postion to mark (1-9): ";
+	cin >> pos_entry;
+	t.mark_board(pos_entry);
+	return in;
 }

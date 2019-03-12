@@ -9,11 +9,7 @@ void ATM::display_balance()
 
 void ATM::deposit(double amt)
 {
-	//BankAccount& act = customer.get_account();
-	//act.deposit(amt);
-
 	customer.get_account().deposit(amt);
-	
 }
 
 void ATM::withdraw(double amt)

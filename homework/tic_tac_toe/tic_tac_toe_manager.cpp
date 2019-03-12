@@ -7,13 +7,15 @@ using std::cout;
 using std::string;
 void TicTacToeManager::save_game(const TicTacToe b)
 {
+
 	games.push_back(b);
 	TicTacToe copy = b;
 	string winner = copy.get_winner();
 	update_winner_count(winner);
+	
 }
 
-void TicTacToeManager::display_history() const
+/*void TicTacToeManager::display_history() const
 {
 	int i = 1;
 	for (auto g : games)
@@ -26,7 +28,7 @@ void TicTacToeManager::display_history() const
 	}
 	cout << "\n X Wins: " << x_win << "\n O Wins: " << o_win << "\n Ties: " << ties;
 }
-
+*/
 void TicTacToeManager::update_winner_count(string winner)
 {
 	if (winner == "X")
@@ -35,4 +37,19 @@ void TicTacToeManager::update_winner_count(string winner)
 		++o_win;
 	else if (winner == "C")
 		++ties;
+}
+
+std::ostream & operator<<(std::ostream & out, const TicTacToeManager & t)
+{
+	int i = 1;
+	for (auto g : t.games)
+	{
+		cout << "\n Game " << i << "\n";
+		cout << t;
+		cout << "\n";
+		++i;
+
+	}
+	cout << "\n X Wins: " << t.x_win << "\n O Wins: " << t.o_win << "\n Ties: " << t.ties;
+	return out;
 }
