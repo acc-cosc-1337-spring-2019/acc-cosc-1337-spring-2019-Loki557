@@ -11,7 +11,7 @@ public:
 	void save_game(const TicTacToe b);
 	friend std::ostream & operator << (std::ostream & out,
 		const TicTacToeManager & t);
-	//void display_history() const;
+	void display_history() const;
 
 
 private:
