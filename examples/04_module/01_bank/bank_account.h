@@ -8,10 +8,11 @@ class BankAccount
 {
 public:
 	BankAccount(int act, double bal);
-	double get_balance() const;
+	double get_balance();
 	void deposit(double amount);
 	void deposit(int pin, double amount);
 	void withdraw(double amount);
+	std::vector<Transaction> get_transactions()const;
 	friend void display(const BankAccount& act);
 	friend BankAccount operator +(BankAccount& act1,
 		const BankAccount& act2);
