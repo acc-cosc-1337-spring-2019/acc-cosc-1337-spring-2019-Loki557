@@ -22,7 +22,7 @@ void ATM::display_transactions() const
 {
 	cout << "Type   " << "Amount  " << " Balance  ";
 
-	for (auto tran : customer.get_account().get_transactions())
+	for (auto tran : customer.get_account().get_transactions()) 
 	{
 		std::cout << tran;
 	}

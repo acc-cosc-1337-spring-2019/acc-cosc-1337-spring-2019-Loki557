@@ -5,9 +5,9 @@ BankAccount::BankAccount(int act, double bal) :
 	account_number(act), balance(bal)
 {
 }
-double BankAccount::get_balance()
-{
 
+double BankAccount::get_balance() 
+{
 	Transaction t("Inquiry", 0, balance);
 	transactions.push_back(t);
 	return balance;
@@ -15,7 +15,7 @@ double BankAccount::get_balance()
 
 void BankAccount::deposit(double amount)
 {
-	if (amount > amount_greater_zero(amount))
+	if (amount_greater_zero(amount))
 	{
 		balance += amount;
 
@@ -24,7 +24,7 @@ void BankAccount::deposit(double amount)
 	}
 }
 
-void BankAccount::deposit(int pin, double amount)
+void BankAccount::deposit(int pin, double amount) 
 {
 
 }
@@ -50,14 +50,14 @@ bool BankAccount::amount_greater_zero(double amount)
 	return amount > 0;
 }
 
-void display(const BankAccount& act)
+void display(const BankAccount& act) 
 {
-	std::cout << "Account: " << act.account_number << "\n";
+	std::cout << "Account: " << act.account_number <<"\n";
 	std::cout << "Balance: " << act.balance;
 }
 
-BankAccount operator+(BankAccount & act1,
-	const BankAccount & act2)
+BankAccount operator+(BankAccount & act1, 
+	                  const BankAccount & act2)
 {
 	act1.balance = act1.balance + act2.balance;
 
@@ -68,6 +68,6 @@ std::ostream & operator<<(std::ostream & out, const BankAccount & b)
 {
 	out << "Account: " << b.account_number << "\n";
 	out << "Balance: " << b.balance;
-
+	
 	return out;
 }

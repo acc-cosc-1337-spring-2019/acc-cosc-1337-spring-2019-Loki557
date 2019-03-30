@@ -2,7 +2,7 @@
 #define CUSTOMER_H
 #include "bank_account.h"
 
-class Customer
+class Customer 
 {
 public:
 	Customer(BankAccount& act) : account(act) {}

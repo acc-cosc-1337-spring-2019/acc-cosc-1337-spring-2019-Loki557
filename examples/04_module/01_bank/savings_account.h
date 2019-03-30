@@ -2,15 +2,13 @@
 #define SAVINGS_ACCOUNT_H
 #include "bank_account.h"
 
-class SavingsAccount : public BankAccount
+class SavingsAccount : public BankAccount 
 {
 public:
-	//float = .9 allows for an optional parameter
 	SavingsAccount(int act, double bal, float i = .9) :
 		BankAccount(act, bal), interest_rate(i) {	}
 	void add_interest_earned();
 	double get_balance();
-
 
 private:
 	const float interest_rate;
