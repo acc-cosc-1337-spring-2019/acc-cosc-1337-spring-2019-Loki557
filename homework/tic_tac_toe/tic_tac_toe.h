@@ -11,7 +11,7 @@ using std::string;
 class TicTacToe 
 {
 public:
-	TicTacToe(string first_player);
+	TicTacToe(int size) : pegs(size * size, "") {}
 	bool game_over();
 	void start_game(std::string first_player);
 	void mark_board(int position);
@@ -25,15 +25,17 @@ public:
 	//bool winner;
 	
 	friend class TicTacToeManager;
+protected: 
+	vector<string> pegs; 
+	virtual bool check_column_win();
+	virtual bool check_row_win();
+	virtual bool check_diagonal_win();
+	string next_player;
 
 private:
-	string next_player;
-	vector<string> pegs{ 9, " " };
+	
 	string winner;
 	void set_next_player();
-	bool check_column_win();
-	bool check_row_win();
-	bool check_diagonal_win();
 	void clear_board();
 	bool check_board_full();
 	void set_winner();

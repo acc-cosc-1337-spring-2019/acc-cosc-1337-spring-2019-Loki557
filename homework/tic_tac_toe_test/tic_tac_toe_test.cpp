@@ -68,7 +68,7 @@ TEST_CASE("Test win by first column")
 
 TEST_CASE("Test win by second column")
 {
-	TicTacToe tic_tac_toe("X");
+	TicTacToe tic_tac_toe(3);
 	tic_tac_toe.start_game("X");
 	//X
 	tic_tac_toe.mark_board(2);
