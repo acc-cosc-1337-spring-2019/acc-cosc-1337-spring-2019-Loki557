@@ -1,4 +1,6 @@
 #include "tic_tac_toe.h"
+#include "tic_tac_toe_3.h"
+#include "tic_tac_toe_4.h"
 #include "tic_tac_toe_manager.h"
 #include <vector>
 #include <string>
@@ -21,8 +23,13 @@ int main()
 		cin >> entry1 ;
 		cout << "Enter \"3\" for TicTacToe3 or \"4\" for TicTacToe4: ";
 		cin >> entry3;
+		TicTacToe * game;
 
-		TicTacToe * game(entry3);
+		if (entry3 == 3)
+			game = new TicTacToe3();
+		else if (entry3 == 4)
+			game = new TicTacToe4();
+		
 		game->start_game(entry1);
 		
 			
