@@ -11,8 +11,8 @@ using std::string;
 class TicTacToe 
 {
 public:
-	TicTacToe() {}
-	TicTacToe(int size) : pegs(size * size, "") {}
+	//TicTacToe() {}
+	TicTacToe(int s) : pegs(s * s, "") {}
 	bool game_over();
 	void start_game(std::string first_player);
 	void mark_board(int position);
@@ -34,7 +34,7 @@ protected:
 	string next_player;
 
 private:
-	
+	//int size;
 	string winner;
 	void set_next_player();
 	void clear_board();

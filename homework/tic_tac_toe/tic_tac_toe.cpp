@@ -7,6 +7,14 @@ using std::cout;
 using std::cin;
 using std::string;
 using std::vector;
+/*TicTacToe::TicTacToe(int s)
+{
+	if (s == 3)
+		size = 3;
+	else if (s == 4)
+		size == 4;
+
+}*/
 /*TicTacToe::TicTacToe(string first_player)
 {
 	start_game(first_player);
@@ -121,15 +129,31 @@ string TicTacToe::get_winner()
 std::ostream & operator<<(std::ostream & out, const TicTacToe & t)
 {
 	int p = 0;
-	for (int r = 1; r <= 3; ++r)
+	if (t.pegs.size() == 9)
 	{
-		cout << "|";
-		for (int c = 1; c <= 3; ++c)
+		for (int r = 1; r <= 3; ++r)
 		{
-			cout << t.pegs[p] << "|";
-			++p;
+			cout << "|";
+			for (int c = 1; c <= 3; ++c)
+			{
+				cout << t.pegs[p] << "|";
+				++p;
+			}
+			cout << "\n";
 		}
-		cout << "\n";
+	}
+	else if (t.pegs.size() == 16)
+	{
+		for (int r = 1; r <= 4; ++r)
+		{
+			cout << "|";
+			for (int c = 1; c <= 4; ++c)
+			{
+				cout << t.pegs[p] << "|";
+				++p;
+			}
+			cout << "\n";
+		}
 	}
 	return out;
 }
