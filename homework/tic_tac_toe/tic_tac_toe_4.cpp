@@ -48,9 +48,9 @@ bool TicTacToe4::check_row_win()
 
 bool TicTacToe4::check_diagonal_win()
 {
-	if (pegs[0] == "X" && pegs[5] == "X" && pegs[10] == "X" && pegs[14] == "X")
+	if (pegs[0] == "X" && pegs[5] == "X" && pegs[10] == "X" && pegs[15] == "X")
 		return true;
-	else if (pegs[0] == "O" && pegs[5] == "O" && pegs[10] == "O" && pegs[14] == "O")
+	else if (pegs[0] == "O" && pegs[5] == "O" && pegs[10] == "O" && pegs[15] == "O")
 		return true;
 	else if (pegs[3] == "X" && pegs[6] == "X" && pegs[9] == "X" && pegs[12] == "X")
 		return true;

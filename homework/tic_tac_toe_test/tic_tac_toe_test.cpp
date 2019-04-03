@@ -14,6 +14,7 @@ TEST_CASE("Verify Test Configuration", "verification") {
 TEST_CASE("Test first player X") 
 {
 	TicTacToe* tic_tac_toe = new TicTacToe3();
+	tic_tac_toe->start_game("X");
 	
 
 	REQUIRE(tic_tac_toe->get_player() == "X");
@@ -87,7 +88,7 @@ TEST_CASE("Test win by first column 4")
 	//O
 	tic_tac_toe->mark_board(2);
 	//X
-	tic_tac_toe->mark_board(9);
+	tic_tac_toe->mark_board(13);
 
 	REQUIRE(tic_tac_toe->game_over() == true);
 
@@ -99,19 +100,19 @@ TEST_CASE("Test win by first column 4")
 	TicTacToe* tic_tac_toe1 = new TicTacToe4();
 	tic_tac_toe1->start_game("O");
 	//X
-	tic_tac_toe->mark_board(1);
+	tic_tac_toe1->mark_board(1);
 	//O
-	tic_tac_toe->mark_board(2);
+	tic_tac_toe1->mark_board(2);
 	//X
-	tic_tac_toe->mark_board(5);
+	tic_tac_toe1->mark_board(5);
 	//O
-	tic_tac_toe->mark_board(2);
+	tic_tac_toe1->mark_board(2);
 	//X
-	tic_tac_toe->mark_board(9);
+	tic_tac_toe1->mark_board(9);
 	//O
-	tic_tac_toe->mark_board(2);
+	tic_tac_toe1->mark_board(2);
 	//X
-	tic_tac_toe->mark_board(9);
+	tic_tac_toe1->mark_board(13);
 
 	REQUIRE(tic_tac_toe1->game_over() == true);
 
@@ -187,19 +188,19 @@ TEST_CASE("Test win by second column 4")
 	TicTacToe* tic_tac_toe1 = new TicTacToe4();
 	tic_tac_toe1->start_game("O");
 	//X
-	tic_tac_toe->mark_board(2);
+	tic_tac_toe1->mark_board(2);
 	//O
-	tic_tac_toe->mark_board(1);
+	tic_tac_toe1->mark_board(1);
 	//X
-	tic_tac_toe->mark_board(6);
+	tic_tac_toe1->mark_board(6);
 	//O
-	tic_tac_toe->mark_board(1);
+	tic_tac_toe1->mark_board(1);
 	//X
-	tic_tac_toe->mark_board(10);
+	tic_tac_toe1->mark_board(10);
 	//O
-	tic_tac_toe->mark_board(1);
+	tic_tac_toe1->mark_board(1);
 	//X
-	tic_tac_toe->mark_board(14);
+	tic_tac_toe1->mark_board(14);
 
 	REQUIRE(tic_tac_toe1->game_over() == true);
 
@@ -272,22 +273,22 @@ TEST_CASE("Test win by third column 4")
 	string winner = tic_tac_toe->get_winner();
 	REQUIRE(winner == "X");
 	delete tic_tac_toe;
-	TicTacToe* tic_tac_toe1 = new TicTacToe3();
+	TicTacToe* tic_tac_toe1 = new TicTacToe4();
 	tic_tac_toe1->start_game("O");
 	//X
-	tic_tac_toe->mark_board(3);
+	tic_tac_toe1->mark_board(3);
 	//O
-	tic_tac_toe->mark_board(1);
+	tic_tac_toe1->mark_board(1);
 	//X
-	tic_tac_toe->mark_board(7);
+	tic_tac_toe1->mark_board(7);
 	//O
-	tic_tac_toe->mark_board(1);
+	tic_tac_toe1->mark_board(1);
 	//X
-	tic_tac_toe->mark_board(11);
+	tic_tac_toe1->mark_board(11);
 	//O
-	tic_tac_toe->mark_board(1);
+	tic_tac_toe1->mark_board(1);
 	//X
-	tic_tac_toe->mark_board(15);
+	tic_tac_toe1->mark_board(15);
 
 	REQUIRE(tic_tac_toe1->game_over() == true);
 
@@ -320,22 +321,22 @@ TEST_CASE("Test win by fourth column 4")
 	string winner = tic_tac_toe->get_winner();
 	REQUIRE(winner == "X");
 	delete tic_tac_toe;
-	TicTacToe* tic_tac_toe1 = new TicTacToe3();
+	TicTacToe* tic_tac_toe1 = new TicTacToe4();
 	tic_tac_toe1->start_game("O");
 	//X
-	tic_tac_toe->mark_board(4);
+	tic_tac_toe1->mark_board(4);
 	//O
-	tic_tac_toe->mark_board(1);
+	tic_tac_toe1->mark_board(1);
 	//X
-	tic_tac_toe->mark_board(8);
+	tic_tac_toe1->mark_board(8);
 	//O
-	tic_tac_toe->mark_board(1);
+	tic_tac_toe1->mark_board(1);
 	//X
-	tic_tac_toe->mark_board(12);
+	tic_tac_toe1->mark_board(12);
 	//O
-	tic_tac_toe->mark_board(1);
+	tic_tac_toe1->mark_board(1);
 	//X
-	tic_tac_toe->mark_board(16); 
+	tic_tac_toe1->mark_board(16); 
 
 	REQUIRE(tic_tac_toe1->game_over() == true);
 
@@ -409,22 +410,22 @@ TEST_CASE("Test win by first row 4")
 	string winner = tic_tac_toe->get_winner();
 	REQUIRE(winner == "X");
 	delete tic_tac_toe;
-	TicTacToe* tic_tac_toe1 = new TicTacToe3();
+	TicTacToe* tic_tac_toe1 = new TicTacToe4();
 	tic_tac_toe1->start_game("O");
 	//X
-	tic_tac_toe->mark_board(1);
+	tic_tac_toe1->mark_board(1);
 	//O
-	tic_tac_toe->mark_board(5);
+	tic_tac_toe1->mark_board(5);
 	//X
-	tic_tac_toe->mark_board(2);
+	tic_tac_toe1->mark_board(2);
 	//O
-	tic_tac_toe->mark_board(5);
+	tic_tac_toe1->mark_board(5);
 	//X
-	tic_tac_toe->mark_board(3);
+	tic_tac_toe1->mark_board(3);
 	//O
-	tic_tac_toe->mark_board(5);
+	tic_tac_toe1->mark_board(5);
 	//X
-	tic_tac_toe->mark_board(4);
+	tic_tac_toe1->mark_board(4);
 
 	REQUIRE(tic_tac_toe1->game_over() == true);
 
@@ -498,22 +499,22 @@ TEST_CASE("Test win by second row 4")
 	string winner = tic_tac_toe->get_winner();
 	REQUIRE(winner == "X");
 	delete tic_tac_toe;
-	TicTacToe* tic_tac_toe1 = new TicTacToe3();
+	TicTacToe* tic_tac_toe1 = new TicTacToe4();
 	tic_tac_toe1->start_game("O");
 	//X
-	tic_tac_toe->mark_board(5);
+	tic_tac_toe1->mark_board(5);
 	//O
-	tic_tac_toe->mark_board(1);
+	tic_tac_toe1->mark_board(1);
 	//X
-	tic_tac_toe->mark_board(6);
+	tic_tac_toe1->mark_board(6);
 	//O
-	tic_tac_toe->mark_board(1);
+	tic_tac_toe1->mark_board(1);
 	//X
-	tic_tac_toe->mark_board(7);
+	tic_tac_toe1->mark_board(7);
 	//O
-	tic_tac_toe->mark_board(1);
+	tic_tac_toe1->mark_board(1);
 	//X
-	tic_tac_toe->mark_board(8);
+	tic_tac_toe1->mark_board(8);
 
 	REQUIRE(tic_tac_toe1->game_over() == true);
 
@@ -585,22 +586,22 @@ TEST_CASE("Test win by third row 4")
 	string winner = tic_tac_toe->get_winner();
 	REQUIRE(winner == "X");
 	delete tic_tac_toe;
-	TicTacToe* tic_tac_toe1 = new TicTacToe3();
+	TicTacToe* tic_tac_toe1 = new TicTacToe4();
 	tic_tac_toe1->start_game("O");
 	//X
-	tic_tac_toe->mark_board(9);
+	tic_tac_toe1->mark_board(9);
 	//O
-	tic_tac_toe->mark_board(1);
+	tic_tac_toe1->mark_board(1);
 	//X
-	tic_tac_toe->mark_board(10);
+	tic_tac_toe1->mark_board(10);
 	//O
-	tic_tac_toe->mark_board(1);
+	tic_tac_toe1->mark_board(1);
 	//X
-	tic_tac_toe->mark_board(11);
+	tic_tac_toe1->mark_board(11);
 	//O
-	tic_tac_toe->mark_board(1);
+	tic_tac_toe1->mark_board(1);
 	//X
-	tic_tac_toe->mark_board(12);
+	tic_tac_toe1->mark_board(12);
 
 	REQUIRE(tic_tac_toe1->game_over() == true);
 
@@ -633,22 +634,22 @@ TEST_CASE("Test win by fourth row 4")
 	string winner = tic_tac_toe->get_winner();
 	REQUIRE(winner == "X");
 	delete tic_tac_toe;
-	TicTacToe* tic_tac_toe1 = new TicTacToe3();
+	TicTacToe* tic_tac_toe1 = new TicTacToe4();
 	tic_tac_toe1->start_game("O");
 	//X
-	tic_tac_toe->mark_board(13);
+	tic_tac_toe1->mark_board(13);
 	//O
-	tic_tac_toe->mark_board(1);
+	tic_tac_toe1->mark_board(1);
 	//X
-	tic_tac_toe->mark_board(14);
+	tic_tac_toe1->mark_board(14);
 	//O
-	tic_tac_toe->mark_board(1);
+	tic_tac_toe1->mark_board(1);
 	//X
-	tic_tac_toe->mark_board(15);
+	tic_tac_toe1->mark_board(15);
 	//O
-	tic_tac_toe->mark_board(1);
+	tic_tac_toe1->mark_board(1);
 	//X
-	tic_tac_toe->mark_board(16);
+	tic_tac_toe1->mark_board(16);
 
 	REQUIRE(tic_tac_toe1->game_over() == true);
 
@@ -721,22 +722,22 @@ TEST_CASE("Test win diagonally from top left 4")
 	REQUIRE(winner == "X");
 	delete tic_tac_toe;
 
-	TicTacToe* tic_tac_toe1 = new TicTacToe3();
+	TicTacToe* tic_tac_toe1 = new TicTacToe4();
 	tic_tac_toe1->start_game("O");
 	//X
-	tic_tac_toe->mark_board(1);
+	tic_tac_toe1->mark_board(1);
 	//O
-	tic_tac_toe->mark_board(2);
+	tic_tac_toe1->mark_board(2);
 	//X
-	tic_tac_toe->mark_board(6);
+	tic_tac_toe1->mark_board(6);
 	//O
-	tic_tac_toe->mark_board(2);
+	tic_tac_toe1->mark_board(2);
 	//X
-	tic_tac_toe->mark_board(11);
+	tic_tac_toe1->mark_board(11);
 	//O
-	tic_tac_toe->mark_board(2);
+	tic_tac_toe1->mark_board(2);
 	//X
-	tic_tac_toe->mark_board(16);
+	tic_tac_toe1->mark_board(16);
 
 	REQUIRE(tic_tac_toe1->game_over() == true);
 
@@ -809,22 +810,22 @@ TEST_CASE("Test win diagonally from bottom left 4")
 	string winner = tic_tac_toe->get_winner();
 	REQUIRE(winner == "X");
 	delete tic_tac_toe;
-	TicTacToe* tic_tac_toe1 = new TicTacToe3();
+	TicTacToe* tic_tac_toe1 = new TicTacToe4();
 	tic_tac_toe1->start_game("O");
 	//X
-	tic_tac_toe->mark_board(13);
+	tic_tac_toe1->mark_board(13);
 	//O
-	tic_tac_toe->mark_board(2);
+	tic_tac_toe1->mark_board(2);
 	//X
-	tic_tac_toe->mark_board(10);
+	tic_tac_toe1->mark_board(10);
 	//O
-	tic_tac_toe->mark_board(2);
+	tic_tac_toe1->mark_board(2);
 	//X
-	tic_tac_toe->mark_board(7);
+	tic_tac_toe1->mark_board(7);
 	//O
-	tic_tac_toe->mark_board(2);
+	tic_tac_toe1->mark_board(2);
 	//X
-	tic_tac_toe->mark_board(4);
+	tic_tac_toe1->mark_board(4);
 
 	REQUIRE(tic_tac_toe1->game_over() == true);
 
