@@ -81,21 +81,6 @@ void TicTacToe::set_next_player()
 		next_player = "X";
 }
 
-bool TicTacToe::check_column_win()
-{
-	return false;
-}
-
-bool TicTacToe::check_row_win()
-{
-	return false;
-}
-
-bool TicTacToe::check_diagonal_win()
-{
-	return false;
-}
-
 void TicTacToe::clear_board()
 {
 	for (auto& p : pegs)

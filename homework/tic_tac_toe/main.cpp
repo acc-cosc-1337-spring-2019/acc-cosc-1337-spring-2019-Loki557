@@ -16,19 +16,21 @@ int main()
 	string entry1, entry2 = "1";
 	int entry3;
 	
-	TicTacToeManager g;
+	std::unique_ptr<TicTacToeManager> g = std::make_unique<TicTacToeManager>();
 	do
 	{
 		cout << "Enter \"X\" or \"O\" to determine who goes first: ";
 		cin >> entry1 ;
 		cout << "Enter \"3\" for TicTacToe3 or \"4\" for TicTacToe4: ";
 		cin >> entry3;
-		TicTacToe * game;
+		std::unique_ptr<TicTacToe> game;
 
-		if (entry3 == 3)
+		game = g->get_game(entry3);
+		
+		/*if (entry3 == 3)
 			game = new TicTacToe3();
 		else if (entry3 == 4)
-			game = new TicTacToe4();
+			game = new TicTacToe4();*/
 		
 		game->start_game(entry1);
 		
@@ -46,12 +48,11 @@ int main()
 			cout << "\nTie Game.";
 		else
 			cout << "\nThe Winner is " << winner;
-		g.TicTacToeManager::save_game(*game);
+		g->save_game(std::move(game));
 		cout << "\nEnter 1 to player another game, or any other key to quit ";
 		cin >> entry2;
 		if (entry2 != "1")
-			cout << g;
-		delete game;
+			cout << *g;
 	} while (entry2 == "1");
 	
 	return 0;
