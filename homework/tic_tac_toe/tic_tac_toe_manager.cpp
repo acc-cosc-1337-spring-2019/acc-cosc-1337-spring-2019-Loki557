@@ -31,6 +31,15 @@ std::unique_ptr<TicTacToe> TicTacToeManager::get_game(int game_type)
 	}
 }
 
+const std::vector<std::unique_ptr<TicTacToe>>& TicTacToeManager::get_games()
+{
+	return games;
+}
+
+void TicTacToeManager::get_winner_totals(int & x, int & o, int & c)
+{
+}
+
 /*void TicTacToeManager::display_history() const
 {
 	int i = 1;

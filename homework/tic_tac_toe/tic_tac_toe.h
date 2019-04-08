@@ -23,6 +23,8 @@ public:
 		 TicTacToe & t);
 	string get_player() const;
 	string get_winner();
+	const vector<string>& get_pegs();
+
 	//bool winner;
 	
 	friend class TicTacToeManager;

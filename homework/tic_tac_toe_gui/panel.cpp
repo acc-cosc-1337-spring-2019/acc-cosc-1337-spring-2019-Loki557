@@ -1,5 +1,6 @@
 #include "panel.h"
 #include<string>
+#include<memory>
 /*
 Class Constructor
 1. STUDENT MUST WRITE CODE FOR THIS
@@ -16,8 +17,8 @@ Panel::Panel(wxWindow* parent)
 	: wxPanel(parent, -1)
 {
 	//1. Create unique pointer of TicTacToeManager
+	manager = std::make_unique<TicTacToeManager>();
 	
-
 	auto vbox = new wxBoxSizer(wxVERTICAL);
 	auto top_horizontal_box = get_top_box_sizer();
 
@@ -31,7 +32,11 @@ Panel::Panel(wxWindow* parent)
 	Call the manager get_games function and save games to a local const vector& reference
     Using auto& for loop, loop through each game and call the history list box Append
     function to add the string Game to it --> "Game"*/
-	
+	const std::vector<std::unique_ptr <TicTacToe>>& games = manager->get_games();
+	for (auto & g : games)
+	{
+		g->history_list_box->Append("Game");
+	}
 
 
 	vbox->Add(top_horizontal_box, 0, wxEXPAND | wxLEFT | wxRIGHT | wxTOP, 10);
@@ -69,7 +74,7 @@ void Panel::on_list_box_click(wxCommandEvent& event)
 	//STUDENT MUST WRITE CODE FOR THIS
 	//1) Write code to get a reference to a vector of boards by calling the manager get_games function
 	//Example const std::vector<std::unique_ptr<SomeClass>>& my_class_vector = other_class->get_classes()
-	
+	const std::vector<std::unique_ptr <TicTacToe>>& games2 = manager->get_games();
 
 	/*STUDENT MUST WRITE CODE FOR THIS
 	2) Write code to get a reference to one board using the history_list_box GetSelection function as 
@@ -101,7 +106,7 @@ void Panel::on_list_box_click(wxCommandEvent& event)
 	{	//call board get_pegs[i-1]  DONE
 
 		//STUDENT ACTION REQUIRED: REMOVE COMMENTS TO RUN STATEMENT BELOW
-		//item->GetWindow()->SetLabel(board->get_pegs()[i - 1]);
+		item->GetWindow()->SetLabel(board->get_pegs()[i - 1]);
 		item->GetWindow()->Disable();
 		i++;
 	}
@@ -109,7 +114,7 @@ void Panel::on_list_box_click(wxCommandEvent& event)
 	/*STUDENT MUST WRITE CODE FOR THIS
 	5)Call the winner_text SetValue function and pass the board get_winner() return value
 	as its parameter argument*/
-	
+	winner_text->SetValue
 	
 	set_winner_labels();
 	this->Layout();

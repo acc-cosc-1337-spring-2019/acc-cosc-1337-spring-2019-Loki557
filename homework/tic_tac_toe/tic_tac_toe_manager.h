@@ -14,7 +14,10 @@ public:
 	std::unique_ptr<TicTacToe> get_game(int game_type);
 	friend std::ostream & operator << (std::ostream & out,
 		const TicTacToeManager & t);
-	void display_history() const;
+	//void display_history() const;
+	const std::vector<std::unique_ptr<TicTacToe>>& get_games();
+	void get_winner_totals(int& x, int& o, int& c);
+
 
 
 private:
