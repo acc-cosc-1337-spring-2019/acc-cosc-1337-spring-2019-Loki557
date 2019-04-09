@@ -33,6 +33,7 @@ Panel::Panel(wxWindow* parent)
     Using auto& for loop, loop through each game and call the history list box Append
     function to add the string Game to it --> "Game"*/
 	const std::vector<std::unique_ptr <TicTacToe>>& games = manager->get_games();
+	
 	for (auto & g : games)
 	{
 		history_list_box->Append("Game");
