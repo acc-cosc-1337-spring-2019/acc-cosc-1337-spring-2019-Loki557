@@ -38,6 +38,9 @@ const std::vector<std::unique_ptr<TicTacToe>>& TicTacToeManager::get_games()
 
 void TicTacToeManager::get_winner_totals(int & x, int & o, int & c)
 {
+	x = x_win;
+	o = o_win;
+	c = ties;
 }
 
 /*void TicTacToeManager::display_history() const
