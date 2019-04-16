@@ -2,6 +2,8 @@
 #include "tic_tac_toe_3.h"
 #include "tic_tac_toe_4.h"
 
+
+
 /*
 Write the code to save a vector of string into a file.
 After writing all the vector strings add a new line character "\n" to file.
@@ -11,7 +13,13 @@ writing and append.
 */
 void TicTacToeData::save_game(const vector<string>& pegs)
 {
-
+	fstream file (file_name, std::ios::out | std::ios::app);
+	for (auto p : pegs)
+	{
+		file << p;
+	}
+	file << "\n";
+	file.close();
 }
 
 /*
@@ -43,6 +51,24 @@ Create unique ptr of TicTacToe boards
 vector<unique_ptr<TicTacToe>> TicTacToeData::get_games()
 {
 	vector<unique_ptr<TicTacToe>> games;
+	fstream file(file_name, std::ios::in);
+	vector<string> saved_board;
+	string line;
+	string peg;
+	while (getline(file, line))
+	{
+		for (auto l : line)
+		{
+			saved_board.push_back(string(1, l));
+		}
+		if (saved_board.size = 9)
+		{
+			unique_ptr<TicTacToe3> board(saved_board);
+			games.push_back(board);
+		}
+	}
+	file.close();
+
 
 	return games;
 }

@@ -7,6 +7,10 @@
 //Write class function implementations here
 using std::cout;
 using std::string;
+TicTacToeManager::TicTacToeManager()
+{
+	data.get_games()
+}
 void TicTacToeManager::save_game(std::unique_ptr<TicTacToe>& game)
 {
 

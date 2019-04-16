@@ -106,6 +106,28 @@ void TicTacToe::set_winner()
 		winner = next_player;
 }
 
+string TicTacToe::determine_winner()
+{
+	bool empty_peg = false;
+	int x_count = 0, o_count = 0;
+	for (auto p : pegs)
+	{
+		if (p == " ")
+			empty_peg = true;
+		else if (p == "X")
+			++x_count;
+		else if (p == "O")
+			++o_count;
+	}
+	if (empty_peg == false)
+		return "C";
+
+	else if (x_count > o_count)
+		return "X";
+	else if (x_count < o_count)
+		return "O";
+}
+
 string TicTacToe::get_winner()
 {
 	return winner;
