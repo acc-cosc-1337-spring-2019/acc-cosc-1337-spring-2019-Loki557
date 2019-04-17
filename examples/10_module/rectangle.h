@@ -8,7 +8,7 @@ namespace acc
 	class Rectangle : public Shape
 	{
 	public:
-		Rectangle(wxDC*, Point p, int w, int h) : Shape(dc), point(p), width(w), height(h) {}
+		Rectangle(wxDC* dc, Point p, int w, int h) : Shape(dc), point(p), width(w), height(h) {}
 		void draw() override;
 
 	private:

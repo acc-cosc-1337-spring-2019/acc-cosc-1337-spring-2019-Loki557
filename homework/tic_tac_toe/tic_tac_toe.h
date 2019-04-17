@@ -13,7 +13,7 @@ class TicTacToe
 public:
 	//TicTacToe() {}
 	TicTacToe(int s) : pegs(s * s, " ") {}
-	TicTacToe(vector<string> s) { pegs = s; }
+	TicTacToe(vector<string> s) : pegs(s) { determine_winner(); }
 	bool game_over();
 	void start_game(std::string first_player);
 	void mark_board(int position);
@@ -25,7 +25,7 @@ public:
 	string get_player() const;
 	string get_winner();
 	const vector<string>& get_pegs();
-	string determine_winner();
+	
 
 	//bool winner;
 	
@@ -44,7 +44,7 @@ private:
 	void clear_board();
 	bool check_board_full();
 	void set_winner();
-	
+	void determine_winner();
 	
 	
 };

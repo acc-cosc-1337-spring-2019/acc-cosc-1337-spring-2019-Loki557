@@ -106,7 +106,7 @@ void TicTacToe::set_winner()
 		winner = next_player;
 }
 
-string TicTacToe::determine_winner()
+void TicTacToe::determine_winner()
 {
 	bool empty_peg = false;
 	int x_count = 0, o_count = 0;
@@ -120,12 +120,12 @@ string TicTacToe::determine_winner()
 			++o_count;
 	}
 	if (empty_peg == false)
-		return "C";
+		winner = "C";
 
 	else if (x_count > o_count)
-		return "X";
+		winner = "X";
 	else if (x_count < o_count)
-		return "O";
+		winner = "O";
 }
 
 string TicTacToe::get_winner()
