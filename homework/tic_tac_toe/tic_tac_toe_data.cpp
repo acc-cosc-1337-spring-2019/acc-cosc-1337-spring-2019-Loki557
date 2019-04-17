@@ -61,11 +61,18 @@ vector<unique_ptr<TicTacToe>> TicTacToeData::get_games()
 		{
 			saved_board.push_back(string(1, l));
 		}
-		if (saved_board.size = 9)
+		if(saved_board.size() == 9)
 		{
-			unique_ptr<TicTacToe3> board(saved_board);
+		unique_ptr<TicTacToe3> board(saved_board);
+		games.push_back(board);
+		}
+
+		else
+		{
+			unique_ptr<TicTacToe4> board(saved_board);
 			games.push_back(board);
 		}
+
 	}
 	file.close();
 

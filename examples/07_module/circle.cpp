@@ -1,9 +1,10 @@
 #include "circle.h"
+#include "shape.h"
 #include <iostream>
 
 //cpp
 
 void Circle::draw()
 {
-	std::cout << "Draw circle";
+	device_context->DrawCircle(wxPoint(point.x, point.y), radius);
 }

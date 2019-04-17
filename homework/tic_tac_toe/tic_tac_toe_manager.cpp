@@ -9,13 +9,15 @@ using std::cout;
 using std::string;
 TicTacToeManager::TicTacToeManager()
 {
-	data.get_games()
+	games = data.get_games();
+
 }
 void TicTacToeManager::save_game(std::unique_ptr<TicTacToe>& game)
 {
 
 	update_winner_count(game->get_winner());
 	games.push_back(std::move(game));
+	data.save_game(game->get_pegs());
 	/*games.push_back(b);
 	TicTacToe copy = b;
 	string winner = copy.get_winner();
@@ -69,6 +71,12 @@ void TicTacToeManager::update_winner_count(string winner)
 		++o_win;
 	else if (winner == "C")
 		++ties;
+}
+
+void TicTacToeManager::set_scores()
+{
+	for(auto g : games)
+
 }
 
 std::ostream & operator<<(std::ostream & out, const TicTacToeManager & t)

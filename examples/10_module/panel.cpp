@@ -36,23 +36,69 @@ Panel::Panel(wxWindow* parent) : wxPanel(parent, -1)
 
 void Panel::OnDraw(wxCommandEvent & event)
 {
+	std::unique_ptr<Shape> shape;
+	auto cdc = new wxClientDC(this);
+	cdc->Clear();
+	draw_shape(Point(200, 200));
+	/*if (radio_box->GetSelection() == 0)//Draw text
+	{
+		draw_shape(Point(200, 200));
+	}
 
+	else if (radio_box->GetSelection() == 1)//Draw Circle
+	{
+		draw_shape(Point(250, 250), 0, 0, 50);
+	}
+
+	else if (radio_box->GetSelection() == 2)//Draw Rectangle
+	{
+		draw_shape(Point(150, 150), 100, 50)
+	}*/
+	shape->draw();
 }
 
 void Panel::OnMouseDown(wxMouseEvent & event)
 {
+	auto cdc = new wxClientDC(this);
+	wxPoint position = event.GetPosition();
 
+	int x = cdc->DeviceToLogicalX(position.x);
+	int y = cdc->DeviceToLogicalX(position.y);
+
+	coord.x = x;
+	coord.y = y;
 }
 
 void Panel::OnMouseUp(wxMouseEvent & event)
 {
-	
+	draw_shape(coord);
 }
 
 void Panel::draw_shape(Point p, int width, int height, int radius)
 {
 
+	auto cdc = new wxClientDC(this);
+
+	std::unique_ptr<Shape> shape;
 	
+
+	if (radio_box->GetSelection() == 0)//Draw text
+	{
+		shape = std::make_unique<Text>(cdc, draw_text->GetValue().ToStdString(),
+			p);
+	}
+
+	else if (radio_box->GetSelection() == 1)//Draw Circle
+	{
+		shape = std::make_unique<Circle>(cdc, p, 50);
+	}
+
+	else if (radio_box->GetSelection() == 2)//Draw Rectangle
+	{
+		shape = std::make_unique<acc::Rectangle>(cdc, p, width, height);
+	}
+	
+	shape->draw();
 
 }
 

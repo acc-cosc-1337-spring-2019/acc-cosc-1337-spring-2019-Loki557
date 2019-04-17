@@ -25,6 +25,7 @@ public:
 	string get_player() const;
 	string get_winner();
 	const vector<string>& get_pegs();
+	string determine_winner();
 
 	//bool winner;
 	
@@ -43,7 +44,7 @@ private:
 	void clear_board();
 	bool check_board_full();
 	void set_winner();
-	string determine_winner();
+	
 	
 	
 };

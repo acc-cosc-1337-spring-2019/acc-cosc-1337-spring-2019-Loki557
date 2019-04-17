@@ -30,6 +30,7 @@ private:
 	int o_win = 0;
 	int ties = 0;
 	void update_winner_count(string winner);
+	void set_scores();
 };
 
 
