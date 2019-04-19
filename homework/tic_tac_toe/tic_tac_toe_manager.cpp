@@ -75,9 +75,22 @@ void TicTacToeManager::update_winner_count(string winner)
 
 void TicTacToeManager::set_scores()
 {
-	for(auto g : games)
+	/*for (auto g : games)
+	{
 
+	}*/
+	for (int i = 0; i <= games.size(); ++i)
+	{
+		string winner = games[i].get_winner();
+		if (winner == "X")
+			++x_win;
+		else if (winner == "O")
+			++o_win;
+		else
+			++ties;
+	}
 }
+
 
 std::ostream & operator<<(std::ostream & out, const TicTacToeManager & t)
 {
