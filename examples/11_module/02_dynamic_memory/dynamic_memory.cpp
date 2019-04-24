@@ -11,6 +11,7 @@ void  allocate_use_release()
 	//Use
 	std::cout << *num;
 
-	//Delete
+	//Release
 	delete num;
+	num = nullptr;
 }
